@@ -1,0 +1,16 @@
+# 秘密鍵
+*.pem
+
+# 環境依存
+.env
+.env.*
+
+# Docker volume
+mysql/
+image/
+
+# OS
+.DS_Store
+
+# log
+*.log
