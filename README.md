@@ -180,11 +180,15 @@ mkdir public
 
 sudo chown -R ec2-user:ec2-user /home/ec2-user/dockertest/public  
 
+### ※sshでEC2インスタンスに入らず、powershell上で行ってください。
+#### githubにあるリポジトリをzipで圧縮し、解凍する。
+
 ### PowerShell からファイル転送
 
-scp -i "秘密鍵のパス" -r "publicフォルダのパス" ec2-user@IPアドレス:/home/ec2-user/dockertest/
+```bash
+scp -i {秘密鍵のファイルパス} -r {publicディレクトリのファイルパス} ec2-user@{IPアドレス}:/home/ec2-user/dockertest
+```
 
----
 
 ## データベース作成
 
