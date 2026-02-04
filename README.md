@@ -1,36 +1,5 @@
 # AWS EC2 + Docker を用いた Web サービス構築手順書
 
-本ドキュメントは、Web概論後期課題として作成した  
-AWS EC2 上に Docker 環境を構築し、PHP を用いた Web アプリケーションを動作させるまでの手順をまとめたものである。
-
----
-
-## 使用技術
-
-- AWS EC2（Amazon Linux）
-- Docker
-- Docker Compose
-- Nginx
-- PHP 8.4（php-fpm）
-- MySQL 8.4
-- Redis
-- PowerShell（Windows）
-
----
-
-## EC2 初期設定
-
-### キーペア（秘密鍵）の権限設定
-
-1. 秘密鍵ファイルを右クリックし「プロパティ」を開く  
-2. 「セキュリティ」タブを選択  
-3. 「継承の無効化」をクリック  
-4. 継承されたアクセス許可をこのオブジェクトの明示的なアクセス許可に変換します  
-   を選択  
-5. ktc 以外のプリンシパルを削除し、適用する  
-
----
-
 ## EC2 へ SSH 接続
 ```
 ssh ec2-user@IPアドレス -i 秘密鍵ファイルのパス
@@ -78,11 +47,9 @@ docker compose version
 ## 作業ディレクトリ作成
 ```
 mkdir dockertest
-```
-```
+
 cd dockertest  
-```
-```
+
 sudo chown -R ec2-user:ec2-user ~/dockertest  
 ```
 ---
